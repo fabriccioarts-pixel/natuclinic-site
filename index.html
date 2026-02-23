@@ -77,6 +77,91 @@
       'https://connect.facebook.net/en_US/fbevents.js');
     // Initialization will be handled by CookieConsent.jsx
   </script>
+
+  <!-- Structured Data for Sitelinks & Knowledge Panel -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "@id": "https://natuclinic.com.br/#organization",
+      "name": "Natuclinic - Estética e Nutrição Ortomolecular",
+      "url": "https://natuclinic.com.br",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://natuclinic.com.br/logo-natuclinic.png",
+        "width": "512",
+        "height": "512"
+      },
+      "image": "https://natuclinic.com.br/natuclinic-reception.jpg",
+      "description": "Clínica especializada em Nutrição Ortomolecular, Ninfoplastia, Endolaser e Harmonização em Brasília e Taguatinga.",
+      "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Setor E Norte",
+          "addressLocality": "Taguatinga",
+          "addressRegion": "DF",
+          "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -15.834, 
+        "longitude": -48.056
+      },
+      "telephone": "+5561992551867",
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 08:00-19:00, Sa 08:00-13:00",
+      "sameAs": [
+        "https://www.instagram.com/instituto.natuclinic/",
+        "https://web.facebook.com/InstitutoNatuclinic",
+        "https://www.youtube.com/@Instituto.Natuclinic",
+        "https://www.linkedin.com/feed/update/urn:li:activity:7140785863470333952/"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://natuclinic.com.br",
+      "name": "Natuclinic",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://natuclinic.com.br/blog?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Procedimentos",
+          "url": "https://natuclinic.com.br/procedimentos"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Harmonização de Glúteos",
+          "url": "https://natuclinic.com.br/gluteo-dos-sonhos"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Blog",
+          "url": "https://natuclinic.com.br/blog"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Ninfoplastia",
+          "url": "https://natuclinic.com.br/procedimentos/ninfoplastia"
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
