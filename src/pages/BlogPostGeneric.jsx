@@ -311,7 +311,7 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig, setCurrentPage
                                 <Unicon name="twitter" size={16} />
                             </a>
                             <a href={`https://wa.me/?text=${post.title}%20${window.location.href}`} target="_blank" rel="noopener noreferrer" className="hover:text-natu-pink transition-colors">
-                                <Unicon name="whatsapp" size={16} />
+                                <Unicon name="whatsapp" size={22} />
                             </a>
                         </div>
                     </div>
@@ -424,9 +424,9 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig, setCurrentPage
                             />
                         </div>
 
-                        <div className="flex flex-col flex-grow text-center md:text-left relative z-10">
+                        <div className="flex flex-col flex-grow text-left relative z-10">
                             {/* "Escrito por" agora dentro do card */}
-                            <span className="font-sans font-bold text-white/60 text-[10px] uppercase tracking-[0.3em] mb-1 flex items-center justify-center md:justify-start gap-2">
+                            <span className="font-sans font-bold text-white/60 text-[10px] uppercase tracking-[0.3em] mb-1 flex items-center justify-start gap-2">
                                 Escrito por
                                 <span className="w-6 h-[1px] bg-white/30 inline-block" />
                             </span>
@@ -434,7 +434,7 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig, setCurrentPage
                                 {post.author_name || "Equipe Natuclinic"}
                             </h4>
                             <p className="text-white/60 text-xs uppercase tracking-widest font-sans font-bold mb-6">Equipe de Especialistas Natuclinic</p>
-                            <div className="flex items-center justify-center md:justify-start gap-4">
+                            <div className="flex items-center justify-start gap-4">
                                 <span className="w-10 h-10 flex items-center justify-center bg-white/10 text-white rounded-full cursor-pointer hover:bg-white hover:text-natu-brown transition-all border border-white/20">
                                     <Unicon name="envelope" size={16} />
                                 </span>
@@ -457,7 +457,7 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig, setCurrentPage
 
                     <hr className="my-12 border-gray-100" />
 
-                    <div className="waitlist-form bg-[#F2F0E9] text-natu-brown p-8 md:p-16 rounded-3xl relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-10">
+                    <div className="waitlist-form bg-[#F2F0E9] text-natu-brown p-8 md:p-16 rounded-3xl relative overflow-hidden text-left flex flex-col md:flex-row items-center justify-between gap-10">
                         {/* Shimmer effect for premium feel */}
                         <div className="absolute inset-0 bg-gradient-to-r from-natu-brown/0 via-natu-brown/5 to-natu-brown/0 -translate-x-full animate-[shimmer_3s_infinite]"></div>
 
@@ -472,9 +472,9 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig, setCurrentPage
                             href="https://wa.me/5561992551867?text=Olá! Desejo resultados reais. Gostaria de agendar uma avaliação."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="relative z-10 px-8 py-4 bg-natu-brown text-white rounded-full font-medium text-base hover:scale-105 transition-all flex items-center gap-3"
+                            className="relative z-10 px-10 py-6 bg-natu-brown text-white rounded-full font-normal text-base hover:scale-105 transition-all flex items-center gap-6"
                         >
-                            <Unicon name="whatsapp" size={24} />
+                            <Unicon name="whatsapp" size={56} />
                             Agendar minha avaliação
                         </a>
                     </div>

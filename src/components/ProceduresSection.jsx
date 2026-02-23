@@ -1,11 +1,14 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Unicon from './Unicon';
 import BlurText from './BlurText';
 
-const ProcedureCard = ({ imageUrl, title, category, onClick, themeColor }) => {
+const ProcedureCard = ({ imageUrl, title, category, path, themeColor }) => {
     return (
-        <div style={{ "--theme-color": themeColor }} className="group w-full aspect-[4/5] cursor-pointer" onClick={onClick}>
+        <Link
+            to={path}
+            style={{ "--theme-color": themeColor }}
+            className="group w-full aspect-[4/5] cursor-pointer block no-underline"
+        >
             <div
                 className="relative block w-full h-full rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 ease-in-out group-hover:scale-[1.02]"
             >
@@ -33,26 +36,20 @@ const ProcedureCard = ({ imageUrl, title, category, onClick, themeColor }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
 const ProceduresSection = () => {
     const navigate = useNavigate();
     const procedimentos = [
-        { title: "Nutrição Ortomolecular", category: "Saúde Celular", imageUrl: "/soroterapia.jpg", theme: "var(--theme-brown)", id: "nutricao" },
-        { title: "Ninfoplastia Sem Cortes", category: "Estética Íntima", imageUrl: "/ninfoplastia.jpeg", theme: "var(--theme-pink)", id: "ninfoplastia" },
-        { title: "Endolaser", category: "Tecnologia Avançada", imageUrl: "/harmonizacao-corporal.jpg", theme: "var(--theme-brown)", id: "endolaser" },
-        { title: "Harmonização de Glúteos", category: "Estética Corporal", imageUrl: "/harmonizacao-de-gluteo.jpg", theme: "var(--theme-pink)", id: "harmonizacao" },
-        { title: "Harmonização Facial", category: "Estética Facial", imageUrl: "/harmonizacao-facial.jpg", theme: "var(--theme-brown)", id: "harmonizacao-facial" },
-        { title: "Emagrecimento Saudável", category: "Nutrição Taguatinga", imageUrl: "/emagrecimento-saudavel.jpg", theme: "var(--theme-pink)", id: "emagrecimento" },
+        { title: "Nutrição Ortomolecular", category: "Saúde Celular", imageUrl: "/soroterapia.jpg", theme: "var(--theme-brown)", path: "/blog/nutricao-ortomolecular-o-que-e-como-funciona-e-para-que-serve" },
+        { title: "Ninfoplastia Sem Cortes", category: "Estética Íntima", imageUrl: "/ninfoplastia.jpeg", theme: "var(--theme-pink)", path: "/procedimentos/ninfoplastia" },
+        { title: "Endolaser", category: "Tecnologia Avançada", imageUrl: "/harmonizacao-corporal.jpg", theme: "var(--theme-brown)", path: "/procedimentos/endolaser" },
+        { title: "Harmonização de Glúteos", category: "Estética Corporal", imageUrl: "/harmonizacao-de-gluteo.jpg", theme: "var(--theme-pink)", path: "/procedimentos/harmonizacao" },
+        { title: "Harmonização Facial", category: "Estética Facial", imageUrl: "/harmonizacao-facial.jpg", theme: "var(--theme-brown)", path: "/procedimentos/harmonizacao-facial" },
+        { title: "Emagrecimento Saudável", category: "Nutrição Taguatinga", imageUrl: "/emagrecimento-saudavel.jpg", theme: "var(--theme-pink)", path: "/blog/-nutrio-ortomolecular-e-naturopatia" },
     ];
-
-    const handleCardClick = (id, title) => {
-        const phone = "5561992551867";
-        const message = encodeURIComponent(`Olá! Gostaria de saber mais sobre o procedimento de ${title}.`);
-        window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-    };
 
     return (
         <section className="py-16 md:py-20 bg-white" id="procedimentos-section">
@@ -70,14 +67,12 @@ const ProceduresSection = () => {
                             />
                         </div>
                     </div>
-                    <a
-                        href="https://wa.me/5561992551867?text=Olá! Gostaria de conhecer todos os protocolos da Natuclinic."
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        to="/procedimentos"
                         className="text-[10px] uppercase font-bold tracking-[0.2em] border-b border-natu-brown pb-1 hover:opacity-50 transition-all self-start text-natu-brown no-underline"
                     >
                         Ver Todos Protocolos
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -88,7 +83,7 @@ const ProceduresSection = () => {
                             category={p.category}
                             imageUrl={p.imageUrl}
                             themeColor={p.theme}
-                            onClick={() => handleCardClick(p.id, p.title)}
+                            path={p.path}
                         />
                     ))}
                 </div>

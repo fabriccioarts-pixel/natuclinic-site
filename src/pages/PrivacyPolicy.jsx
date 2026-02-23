@@ -9,6 +9,12 @@ const PrivacyPolicy = ({ goBack }) => {
     const containerRef = useRef(null);
 
     useEffect(() => {
+        // Prevent indexing of this page
+        const meta = document.createElement('meta');
+        meta.name = "robots";
+        meta.content = "noindex";
+        document.head.appendChild(meta);
+
         const ctx = gsap.context(() => {
             gsap.from(".policy-section", {
                 scrollTrigger: {
@@ -22,7 +28,10 @@ const PrivacyPolicy = ({ goBack }) => {
                 ease: "power2.out"
             });
         }, containerRef);
-        return () => ctx.revert();
+        return () => {
+            ctx.revert();
+            document.head.removeChild(meta);
+        };
     }, []);
 
     const sections = [

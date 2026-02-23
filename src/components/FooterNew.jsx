@@ -79,11 +79,11 @@ const FooterNew = () => {
             {
                 title: "Procedimentos",
                 links: [
-                    { label: "Ninfoplastia", href: WHATSAPP_LINKS.PROCEDURES },
-                    { label: "Endolaser", href: WHATSAPP_LINKS.PROCEDURES },
-                    { label: "Harmonização", href: WHATSAPP_LINKS.PROCEDURES },
-                    { label: "Emagrecimento", href: WHATSAPP_LINKS.PROCEDURES },
-                    { label: "Ortomolecular", href: WHATSAPP_LINKS.PROCEDURES },
+                    { label: "Ninfoplastia", path: "/procedimentos/ninfoplastia" },
+                    { label: "Endolaser", path: "/procedimentos/endolaser" },
+                    { label: "Harmonização", path: "/procedimentos/harmonizacao" },
+                    { label: "Emagrecimento", path: "/blog/-nutrio-ortomolecular-e-naturopatia" },
+                    { label: "Ortomolecular", path: "/blog/nutricao-ortomolecular-o-que-e-como-funciona-e-para-que-serve" },
                 ],
             },
             {

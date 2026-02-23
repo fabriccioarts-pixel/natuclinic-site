@@ -34,7 +34,7 @@ const GluteoLanding = () => {
     });
 
     useEffect(() => {
-        document.title = "Glúteos dos Sonhos - Harmonização | Natuclinic";
+        document.title = "Glúteos dos Sonhos - Harmonização de Glúteos em Brasília | Natuclinic";
 
         let metaDesc = document.querySelector('meta[name="description"]');
         if (!metaDesc) {
@@ -42,7 +42,15 @@ const GluteoLanding = () => {
             metaDesc.name = "description";
             document.head.appendChild(metaDesc);
         }
-        metaDesc.content = "Protocolo exclusivo de harmonização com ácido hialurônico: volume, projeção e contorno sem cirurgia. Agende sua avaliação gratuita na Natuclinic.";
+        metaDesc.content = "Conquiste o glúteo dos sonhos com nosso protocolo exclusivo de harmonização com ácido hialurônico em Brasília. Volume, projeção e contorno natural sem cirurgia. Agende sua avaliação!";
+
+        let metaKeywords = document.querySelector('meta[name="keywords"]');
+        if (!metaKeywords) {
+            metaKeywords = document.createElement('meta');
+            metaKeywords.name = "keywords";
+            document.head.appendChild(metaKeywords);
+        }
+        metaKeywords.content = "harmonização de glúteos brasília, preenchimento de glúteos df, glúteos dos sonhos natuclinic, ácido hialurônico corporal, biomédica esteta brasília, estética corporal taguatinga";
 
         let jsonLdScript = document.querySelector('script[type="application/ld+json"]');
         if (!jsonLdScript) {
@@ -53,12 +61,18 @@ const GluteoLanding = () => {
         const structuredData = {
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Harmonização de Glúteos",
+            "name": "Harmonização de Glúteos dos Sonhos",
+            "serviceType": "Estética Corporal",
             "provider": {
                 "@type": "MedicalBusiness",
-                "name": "Natuclinic"
+                "name": "Natuclinic",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Brasília",
+                    "addressRegion": "DF"
+                }
             },
-            "description": "Volume, projeção e contorno glúteo sem cirurgia."
+            "description": "Protocolo avançado de harmonização e preenchimento de glúteos com ácido hialurônico para volume e projeção imediata."
         };
         jsonLdScript.text = JSON.stringify(structuredData);
     }, []);
