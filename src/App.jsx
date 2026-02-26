@@ -13,6 +13,7 @@ const Ninfoplastia = React.lazy(() => import('./pages/Ninfoplastia'));
 const Endolaser = React.lazy(() => import('./pages/Endolaser'));
 const HarmonizacaoGluteos = React.lazy(() => import('./pages/HarmonizacaoGluteos'));
 const HarmonizacaoFacial = React.lazy(() => import('./pages/HarmonizacaoFacial'));
+const NutricaoOrtomolecular = React.lazy(() => import('./pages/NutricaoOrtomolecular'));
 const Blog = React.lazy(() => import('./pages/Blog'));
 const CeoSection = React.lazy(() => import('./components/CeoSection'));
 const FooterNew = React.lazy(() => import('./components/FooterNew'));
@@ -117,7 +118,9 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
-  const isServicePage = location.pathname.startsWith('/procedimentos/') && location.pathname !== '/procedimentos';
+  const isServicePage = location.pathname.startsWith('/procedimentos/') &&
+    location.pathname !== '/procedimentos' &&
+    location.pathname !== '/procedimentos/nutricao-ortomolecular';
 
   return (
     <div className="min-h-screen bg-white">
@@ -152,6 +155,7 @@ export default function App() {
             <Route path="/procedimentos/endolaser" element={<Endolaser goBack={() => navigate(-1)} />} />
             <Route path="/procedimentos/harmonizacao" element={<HarmonizacaoGluteos goBack={() => navigate(-1)} />} />
             <Route path="/procedimentos/harmonizacao-facial" element={<HarmonizacaoFacial goBack={() => navigate(-1)} />} />
+            <Route path="/procedimentos/nutricao-ortomolecular" element={<NutricaoOrtomolecular goBack={() => navigate(-1)} />} />
 
             <Route path="/blog" element={<Blog goBack={() => navigate('/')} setCurrentPage={(id) => navigate(`/blog/${id}`)} articles={articles} loading={loading} />} />
             <Route path="/blog/:id" element={<BlogPostWrapper articles={articles} adConfig={adConfig} loading={loading} />} />

@@ -67,7 +67,7 @@ const Navbar = () => {
                     {
                         title: 'Saúde',
                         links: [
-                            { label: 'Nutrição Ortomolecular', href: WHATSAPP_LINKS.GENERAL },
+                            { label: 'Nutrição Ortomolecular', path: '/procedimentos/nutricao-ortomolecular' },
                             { label: 'Emagrecimento Saudável', href: WHATSAPP_LINKS.GENERAL },
                             { label: 'Soroterapia', href: WHATSAPP_LINKS.GENERAL },
                             { label: 'Ozonioterapia', href: WHATSAPP_LINKS.GENERAL },

@@ -43,7 +43,7 @@ const ProcedureCard = ({ imageUrl, title, category, path, themeColor }) => {
 const ProceduresSection = () => {
     const navigate = useNavigate();
     const procedimentos = [
-        { title: "Nutrição Ortomolecular", category: "Saúde Celular", imageUrl: "/soroterapia.jpg", theme: "var(--theme-brown)", path: "/blog/nutricao-ortomolecular-o-que-e-como-funciona-e-para-que-serve" },
+        { title: "Nutrição Ortomolecular", category: "Saúde Celular", imageUrl: "/soroterapia.jpg", theme: "var(--theme-brown)", path: "/procedimentos/nutricao-ortomolecular" },
         { title: "Ninfoplastia Sem Cortes", category: "Estética Íntima", imageUrl: "/ninfoplastia.jpeg", theme: "var(--theme-pink)", path: "/procedimentos/ninfoplastia" },
         { title: "Endolaser", category: "Tecnologia Avançada", imageUrl: "/harmonizacao-corporal.jpg", theme: "var(--theme-brown)", path: "/procedimentos/endolaser" },
         { title: "Harmonização de Glúteos", category: "Estética Corporal", imageUrl: "/harmonizacao-de-gluteo.jpg", theme: "var(--theme-pink)", path: "/procedimentos/harmonizacao" },
