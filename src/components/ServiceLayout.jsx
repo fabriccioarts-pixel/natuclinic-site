@@ -12,7 +12,7 @@ const ServiceLayout = ({ title, subtitle, children, goBack, coverImage, whatsapp
         if (hideHeader) return;
         const ctx = gsap.context(() => {
             gsap.from(headerRef.current.children, {
-                y: 30,
+                filter: "blur(10px)",
                 opacity: 0,
                 duration: 1.2,
                 stagger: 0.1,

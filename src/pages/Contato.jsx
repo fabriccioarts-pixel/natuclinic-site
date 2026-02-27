@@ -65,7 +65,7 @@ const Contato = ({ goBack }) => {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.from(".main-card", {
-                y: 40,
+                filter: "blur(10px)",
                 opacity: 0,
                 duration: 1.2,
                 ease: "power3.out"
