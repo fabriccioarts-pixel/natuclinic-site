@@ -483,7 +483,7 @@ const NutricaoOrtomolecular = ({ goBack }) => {
 
             {/* 2. Apresentação Dr. Julimar */}
             <section className="py-12 md:py-20 px-6 md:px-16 max-w-[1400px] mx-auto lg:flex lg:items-center">
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 w-full">
+                <div className="flex flex-col lg:flex-row lg:items-center items-start justify-center gap-8 lg:gap-20 w-full">
                     {/* Foto */}
                     <motion.div
                         initial={{ opacity: 0, filter: 'blur(10px)' }}
@@ -507,7 +507,7 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                         whileInView={{ opacity: 1, filter: 'blur(0px)' }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="flex flex-col justify-center relative p-6 md:p-0"
+                        className="flex flex-col justify-center relative p-0 lg:p-0 text-left items-start"
                     >
                         <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] text-gray-400 mb-4 font-sans">
                             Conheça o especialista
