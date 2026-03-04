@@ -212,9 +212,9 @@ const FooterNew = () => {
                                 href="https://www.instagram.com/obiodomarketing?igsh=MWo2bW04c2k4Nzh1ag%3D%3D&utm_source=qr"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-bold hover:text-[#F2F0E9] transition-colors"
+                                className="transition-all hover:opacity-80"
                             >
-                                Bio Marketing
+                                <img src="/Bio _ Marketing.svg" alt="Bio Marketing" className="h-6 w-auto object-contain" />
                             </a>
                         </div>
                     </div>
