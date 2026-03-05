@@ -120,7 +120,8 @@ export default function App() {
 
   const isServicePage = location.pathname.startsWith('/procedimentos/') &&
     location.pathname !== '/procedimentos' &&
-    location.pathname !== '/procedimentos/nutricao-ortomolecular';
+    location.pathname !== '/procedimentos/nutricao-ortomolecular' &&
+    location.pathname !== '/procedimentos/ninfoplastia';
 
   return (
     <div className="min-h-screen bg-white">
