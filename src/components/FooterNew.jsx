@@ -79,11 +79,11 @@ const FooterNew = () => {
             {
                 title: "Procedimentos",
                 links: [
-                    { label: "Ninfoplastia", path: "/procedimentos/ninfoplastia" },
-                    { label: "Harmonização Corporal", path: "/procedimentos/endolaser" },
+                    { label: "Ninfoplastia", href: WHATSAPP_LINKS.MSG_NINFO },
+                    { label: "Harmonização Corporal", href: WHATSAPP_LINKS.MSG_CORPORAL },
                     { label: "Harmonização de Glúteos", path: "/gluteo-dos-sonhos" },
                     { label: "Nutrição Ortomolecular", path: "/procedimentos/nutricao-ortomolecular" },
-                    { label: "Terapia Injetável", path: "/procedimentos/nutricao-ortomolecular" },
+                    { label: "Terapia Injetável", href: WHATSAPP_LINKS.MSG_SOROTERAPIA },
                 ],
             },
             {

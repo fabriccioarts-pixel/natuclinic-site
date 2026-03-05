@@ -1,41 +1,62 @@
 import { useNavigate, Link } from 'react-router-dom';
 import Unicon from './Unicon';
 import BlurText from './BlurText';
+import { WHATSAPP_LINKS } from '../constants/links';
 
-const ProcedureCard = ({ imageUrl, title, category, path, themeColor }) => {
+const ProcedureCard = ({ imageUrl, title, category, path, href, themeColor }) => {
+    const isExternal = !!href;
+
+    const Content = () => (
+        <div
+            className="relative block w-full h-full rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 ease-in-out group-hover:scale-[1.02]"
+        >
+            <img
+                src={imageUrl}
+                alt={title}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover grayscale-[20%] transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:grayscale-0"
+            />
+            <div
+                className="absolute inset-0"
+                style={{
+                    background: `linear-gradient(to top, hsl(var(--theme-color) / 0.95) 0%, hsl(var(--theme-color) / 0.4) 40%, transparent 80%)`,
+                }}
+            />
+            <div className="relative flex flex-col justify-end h-full p-8 text-white">
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/70 mb-2 font-sans">
+                    {category}
+                </span>
+                <h3 className="text-3xl font-serif leading-tight">{title}</h3>
+                <div className="mt-8 flex items-center justify-between bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-5 py-4 transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/40 flicker-fix">
+                    <span className="text-[10px] font-bold uppercase tracking-widest font-sans">Saber Mais</span>
+                    <Unicon name="arrow-right" className="h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+            </div>
+        </div>
+    );
+
+    if (isExternal) {
+        return (
+            <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ "--theme-color": themeColor }}
+                className="group w-full aspect-[4/5] cursor-pointer block no-underline"
+            >
+                <Content />
+            </a>
+        );
+    }
+
     return (
         <Link
             to={path}
             style={{ "--theme-color": themeColor }}
             className="group w-full aspect-[4/5] cursor-pointer block no-underline"
         >
-            <div
-                className="relative block w-full h-full rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 ease-in-out group-hover:scale-[1.02]"
-            >
-                <img
-                    src={imageUrl}
-                    alt={title}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover grayscale-[20%] transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:grayscale-0"
-                />
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background: `linear-gradient(to top, hsl(var(--theme-color) / 0.95) 0%, hsl(var(--theme-color) / 0.4) 40%, transparent 80%)`,
-                    }}
-                />
-                <div className="relative flex flex-col justify-end h-full p-8 text-white">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/70 mb-2 font-sans">
-                        {category}
-                    </span>
-                    <h3 className="text-3xl font-serif leading-tight">{title}</h3>
-                    <div className="mt-8 flex items-center justify-between bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-5 py-4 transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/40 flicker-fix">
-                        <span className="text-[10px] font-bold uppercase tracking-widest font-sans">Saber Mais</span>
-                        <Unicon name="arrow-right" className="h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
-                    </div>
-                </div>
-            </div>
+            <Content />
         </Link>
     );
 };
@@ -44,11 +65,11 @@ const ProceduresSection = () => {
     const navigate = useNavigate();
     const procedimentos = [
         { title: "Nutrição Ortomolecular", category: "Saúde Celular", imageUrl: "/emagrecimento-saudavel.jpg", theme: "var(--theme-brown)", path: "/procedimentos/nutricao-ortomolecular" },
-        { title: "Ninfoplastia Sem Cortes", category: "Estética Íntima", imageUrl: "/ninfoplastia.jpeg", theme: "var(--theme-pink)", path: "/procedimentos/ninfoplastia" },
-        { title: "Harmonização Corporal", category: "Estética Corporal", imageUrl: "/harmonizacao-corporal.jpg", theme: "var(--theme-brown)", path: "/procedimentos/endolaser" },
+        { title: "Ninfoplastia Sem Cortes", category: "Estética Íntima", imageUrl: "/ninfoplastia.jpeg", theme: "var(--theme-pink)", href: WHATSAPP_LINKS.MSG_NINFO },
+        { title: "Harmonização Corporal", category: "Estética Corporal", imageUrl: "/harmonizacao-corporal.jpg", theme: "var(--theme-brown)", href: WHATSAPP_LINKS.MSG_CORPORAL },
         { title: "Harmonização de Glúteos", category: "Estética Corporal", imageUrl: "/harmonizacao-de-gluteo.jpg", theme: "var(--theme-pink)", path: "/gluteo-dos-sonhos" },
-        { title: "Harmonização Facial", category: "Estética Facial", imageUrl: "/harmonizacao-facial.jpg", theme: "var(--theme-brown)", path: "/procedimentos/harmonizacao-facial" },
-        { title: "Terapia Injetável", category: "Soroterapia & Nutrição", imageUrl: "/soroterapia-terapia-injetavel-vitaminas-e-aminoacidos.png", theme: "var(--theme-pink)", path: "/procedimentos/nutricao-ortomolecular" },
+        { title: "Harmonização Facial", category: "Estética Facial", imageUrl: "/harmonizacao-facial.jpg", theme: "var(--theme-brown)", href: WHATSAPP_LINKS.MSG_FACIAL },
+        { title: "Terapia Injetável", category: "Soroterapia & Nutrição", imageUrl: "/soroterapia-terapia-injetavel-vitaminas-e-aminoacidos.png", theme: "var(--theme-pink)", href: WHATSAPP_LINKS.MSG_SOROTERAPIA },
     ];
 
     return (
@@ -84,6 +105,7 @@ const ProceduresSection = () => {
                             imageUrl={p.imageUrl}
                             themeColor={p.theme}
                             path={p.path}
+                            href={p.href}
                         />
                     ))}
                 </div>

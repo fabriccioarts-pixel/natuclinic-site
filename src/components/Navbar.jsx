@@ -68,10 +68,10 @@ const Navbar = () => {
                         title: 'Saúde',
                         links: [
                             { label: 'Nutrição Ortomolecular', path: '/procedimentos/nutricao-ortomolecular' },
-                            { label: 'Soroterapia', href: WHATSAPP_LINKS.GENERAL },
-                            { label: 'Ozonioterapia', href: WHATSAPP_LINKS.GENERAL },
+                            { label: 'Soroterapia', href: WHATSAPP_LINKS.MSG_SOROTERAPIA },
+                            { label: 'Ozonioterapia', href: WHATSAPP_LINKS.MSG_OZONIO },
                             { label: 'Eletroestimulação', href: WHATSAPP_LINKS.GENERAL },
-                            { label: 'Suplementação', href: WHATSAPP_LINKS.GENERAL },
+                            { label: 'Suplementação', href: WHATSAPP_LINKS.MSG_SUPLEMENTACAO },
                             { label: 'Ginecologia', href: WHATSAPP_LINKS.GENERAL },
                             { label: 'Nutrição Esportiva', href: WHATSAPP_LINKS.GENERAL }
                         ]
@@ -91,10 +91,10 @@ const Navbar = () => {
                         title: 'Estética',
                         links: [
                             { label: 'Harmonização de Glúteos', path: '/gluteo-dos-sonhos' },
-                            { label: 'Harmonização Facial', href: WHATSAPP_LINKS.PROCEDURES },
-                            { label: 'Ninfoplastia Sem Cortes', href: WHATSAPP_LINKS.PROCEDURES },
+                            { label: 'Harmonização Facial', href: WHATSAPP_LINKS.MSG_FACIAL },
+                            { label: 'Ninfoplastia Sem Cortes', href: WHATSAPP_LINKS.MSG_NINFO },
                             { label: 'Bioestimuladores de Colágeno', href: WHATSAPP_LINKS.PROCEDURES },
-                            { label: 'Harmonização Corporal', path: '/procedimentos/endolaser' }
+                            { label: 'Harmonização Corporal', href: WHATSAPP_LINKS.MSG_CORPORAL }
                         ]
                     }
                 ]
