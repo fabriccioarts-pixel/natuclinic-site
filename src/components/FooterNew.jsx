@@ -80,10 +80,10 @@ const FooterNew = () => {
                 title: "Procedimentos",
                 links: [
                     { label: "Ninfoplastia", path: "/procedimentos/ninfoplastia" },
-                    { label: "Endolaser", path: "/procedimentos/endolaser" },
-                    { label: "Harmonização", path: "/procedimentos/harmonizacao" },
-                    { label: "Emagrecimento", path: "/blog/-nutrio-ortomolecular-e-naturopatia" },
-                    { label: "Ortomolecular", path: "/blog/nutricao-ortomolecular-o-que-e-como-funciona-e-para-que-serve" },
+                    { label: "Harmonização Corporal", path: "/procedimentos/endolaser" },
+                    { label: "Harmonização de Glúteos", path: "/gluteo-dos-sonhos" },
+                    { label: "Nutrição Ortomolecular", path: "/procedimentos/nutricao-ortomolecular" },
+                    { label: "Terapia Injetável", path: "/procedimentos/nutricao-ortomolecular" },
                 ],
             },
             {
