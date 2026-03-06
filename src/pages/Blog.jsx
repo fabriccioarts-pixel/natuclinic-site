@@ -49,7 +49,7 @@ const Blog = ({ goBack, setCurrentPage, articles, loading }) => {
                 {featuredPost && !searchTerm && (
                     <article
                         onClick={() => setCurrentPage(featuredPost.slug || featuredPost.id)}
-                        className="group cursor-pointer grid lg:grid-cols-2 gap-0 mb-20 bg-gray-50 rounded-xl overflow-hidden border border-gray-100/50 max-w-5xl mx-auto lg:h-[450px]"
+                        className="group cursor-pointer grid lg:grid-cols-2 gap-0 mb-20 bg-gray-50 rounded-xl overflow-hidden max-w-5xl mx-auto lg:h-[450px]"
                     >
                         <div className="aspect-video lg:aspect-auto overflow-hidden h-full">
                             <img
@@ -95,7 +95,7 @@ const Blog = ({ goBack, setCurrentPage, articles, loading }) => {
                             className="group cursor-pointer flex flex-col h-full animate-in fade-in zoom-in duration-700"
                             style={{ animationDelay: `${i * 100}ms` }}
                         >
-                            <div className="aspect-video overflow-hidden rounded-xl mb-8 relative border border-natu-brown/5">
+                            <div className="aspect-video overflow-hidden rounded-xl mb-8 relative">
                                 <img
                                     src={post.image}
                                     alt={post.title}

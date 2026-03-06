@@ -21,7 +21,7 @@ const HarmonizacaoGluteos = ({ goBack }) => {
                         Com o passar dos anos — ou mesmo por características genéticas — é comum perceber perda de volume, flacidez ou assimetrias na região glútea. E isso não tem a ver apenas com estética. Tem a ver com como você se sente no próprio corpo.
                     </p>
 
-                    <div className="my-12 pl-6 border-l-2 border-natu-brown/30">
+                    <div className="my-12 pl-6 border-l-2 border-natu-pink">
                         <h3 className="text-2xl font-serif italic text-natu-brown mb-2">Estética não é vaidade.</h3>
                         <p className="font-sans text-natu-brown/70 italic">É cuidado. É saúde. É autoestima.</p>
                     </div>

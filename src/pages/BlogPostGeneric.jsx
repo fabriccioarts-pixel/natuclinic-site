@@ -323,7 +323,7 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig = null, setCurr
                                     remarkPlugins={[remarkGfm]}
                                     components={{
                                         table: ({ children }) => (
-                                            <div className="w-full overflow-y-hidden overflow-x-auto my-8 border border-gray-100 rounded-xl">
+                                            <div className="table-responsive-wrapper">
                                                 <table className="min-w-full border-collapse">
                                                     {children}
                                                 </table>
@@ -402,7 +402,7 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig = null, setCurr
                                         }}
                                         className="group cursor-pointer space-y-4"
                                     >
-                                        <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-natu-brown/5">
+                                        <div className="aspect-[16/9] rounded-2xl overflow-hidden">
                                             <img src={related.image} alt={related.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                         </div>
                                         <div>

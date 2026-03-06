@@ -20,7 +20,7 @@ const HarmonizacaoFacial = ({ goBack }) => {
                     Com o passar dos anos, perdemos volume em áreas estratégicas, desenvolvemos linhas de expressão e notamos mudanças na textura da pele. Isso é natural. Mas também é possível reverter esses sinais de forma sutil, elegante e completamente natural.
                 </p>
 
-                <div className="my-12 pl-6 border-l-2 border-natu-brown/30">
+                <div className="my-12 pl-6 border-l-2 border-natu-pink">
                     <h3 className="text-2xl font-serif italic text-natu-brown mb-2">Beleza não é padronização.</h3>
                     <p className="font-sans text-natu-brown/70 italic">É expressão da sua melhor versão.</p>
                 </div>

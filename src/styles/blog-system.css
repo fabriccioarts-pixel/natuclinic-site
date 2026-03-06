@@ -126,7 +126,6 @@
     grid-row: 1 / span 10;
     position: relative;
     padding-right: 2rem;
-    border-right: 1px solid rgba(76, 38, 26, 0.05);
 }
 
 .blog-system-wrapper .blog-sidebar-right {
@@ -140,7 +139,6 @@
     font-size: 0.8rem;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(76, 38, 26, 0.05);
     padding: 1.5rem;
     border-radius: 1rem;
     margin-bottom: 2rem;
@@ -248,9 +246,9 @@
     display: inline-block;
     width: 2px;
     height: 1.4rem;
-    background-color: var(--accent-light);
+    background-color: #FFC2C2;
     border-radius: 1px;
-    opacity: 0.25;
+    opacity: 1;
     margin-top: 0.5rem;
     flex-shrink: 0;
 }
@@ -331,31 +329,65 @@
     border-collapse: collapse;
     margin: 2rem 0;
     text-align: left;
-    font-size: 1rem;
-    border-bottom: 1px solid rgba(76, 38, 26, 0.1);
+    font-size: 0.8rem;
+    border-bottom: none;
+    /* Removed bottom border from table tag to avoid extra line */
 }
 
 .blog-system-wrapper article th {
+    background-color: #4C261A;
+    color: #ffffff;
     font-weight: 700;
     padding: 1.25rem 1rem;
-    border-bottom: 1px solid rgba(76, 38, 26, 0.2);
-    color: var(--accent-dark);
+    border: none;
     font-family: inherit;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-align: left;
 }
 
 .blog-system-wrapper article td {
-    padding: 1.25rem 1rem;
-    border-bottom: 1px solid rgba(76, 38, 26, 0.1);
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgba(76, 38, 26, 0.08);
     color: #444;
     vertical-align: middle;
+    font-size: 0.75rem;
+    line-height: 1.5;
 }
 
 .blog-system-wrapper article tr:last-child td {
-    border-bottom: none;
+    border-bottom: none !important;
+}
+
+/* Responsive wrapper for tables handled in JS/Component */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 2rem 0;
 }
 
 .blog-system-wrapper article tr:hover {
     background-color: rgba(76, 38, 26, 0.02);
+}
+
+@media (max-width: 768px) {
+    .blog-system-wrapper article table {
+        font-size: 0.7rem;
+    }
+
+    .blog-system-wrapper article th {
+        padding: 1rem 0.75rem;
+        font-size: 0.55rem;
+    }
+
+    .blog-system-wrapper article td {
+        padding: 0.85rem 0.75rem;
+        font-size: 0.7rem;
+        min-width: 120px;
+        /* Garante que as colunas não fiquem espremidas demais */
+    }
 }
 
 /* Footer & Form */

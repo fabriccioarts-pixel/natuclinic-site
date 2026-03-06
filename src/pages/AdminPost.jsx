@@ -260,7 +260,7 @@ const AdminPost = ({ goBack }) => {
                         ) : (
                             <div className="grid gap-4">
                                 {articles.map(article => (
-                                    <div key={article.id} className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-50 rounded-2xl border border-gray-200/50 hover:border-natu-brown/20 transition-all group">
+                                    <div key={article.id} className="flex flex-col md:flex-row items-center justify-between p-4 bg-gray-50 rounded-2xl hover:border-natu-brown/20 transition-all group">
                                         <div className="flex items-center gap-4 w-full md:w-auto">
                                             <div className="w-16 h-12 rounded-lg overflow-hidden bg-gray-200 shrink-0">
                                                 <img src={article.image} alt="" className="w-full h-full object-cover" />
