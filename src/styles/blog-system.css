@@ -230,15 +230,15 @@
 .blog-system-wrapper article h2 {
     margin-top: 3rem;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 2.25rem;
+    font-weight: 700;
 }
 
 .blog-system-wrapper article h3 {
     margin-top: 2rem;
     margin-bottom: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.75rem;
+    font-weight: 600;
 }
 
 .blog-system-wrapper article p {
@@ -268,6 +268,38 @@
     border-radius: 1.5rem;
     margin-top: 10px;
     margin-bottom: 2rem;
+}
+
+/* Tables */
+.blog-system-wrapper article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    text-align: left;
+    border: 1px solid rgba(76, 38, 26, 0.1);
+    font-size: 1rem;
+}
+
+.blog-system-wrapper article th {
+    background-color: rgba(76, 38, 26, 0.05);
+    font-weight: 600;
+    padding: 1rem;
+    border: 1px solid rgba(76, 38, 26, 0.1);
+    color: var(--accent-dark);
+}
+
+.blog-system-wrapper article td {
+    padding: 1rem;
+    border: 1px solid rgba(76, 38, 26, 0.1);
+    color: #444;
+}
+
+.blog-system-wrapper article tr:nth-child(even) {
+    background-color: rgba(76, 38, 26, 0.02);
+}
+
+.blog-system-wrapper article tr:hover {
+    background-color: rgba(76, 38, 26, 0.05);
 }
 
 /* Footer & Form */
@@ -369,5 +401,13 @@
     .blog-system-wrapper article img {
         margin-block: 1rem;
         border-radius: 1rem;
+    }
+
+    .blog-system-wrapper article h2 {
+        font-size: 1.75rem;
+    }
+
+    .blog-system-wrapper article h3 {
+        font-size: 1.5rem;
     }
 }
