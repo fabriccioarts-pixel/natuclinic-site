@@ -553,63 +553,46 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                     </div>
 
                     {/* Grid of Pillars */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-20">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12 md:gap-y-16">
                         {[
                             {
                                 title: "Diagnóstico Bioquímico",
                                 desc: "Análise profunda de biomarcadores para identificar carências celulares precisas.",
-                                bgImage: "/quanto-custa-uma-consulta-com-nutricionista-ortomolecular.webp",
                             },
                             {
                                 title: "Fitoterapia Integrativa",
                                 desc: "Uso de plantas medicinais e fitoterápicos para modular o metabolismo de forma natural.",
-                                bgImage: "/suplementação-natural-natuclinic-ortomolecular-em-brasilia.webp",
                             },
                             {
                                 title: "Dieta Funcional",
                                 desc: "Plano alimentar focado em silenciar genes inflamatórios e nutrir células.",
-                                bgImage: "/nutrição-oncologica-nutricionista-ortomolecular.png",
                             },
                             {
-                                title: "Suplementação",
-                                desc: "Fórmulas personalizadas com vitaminas e minerais na dose exata para você.",
-                                bgImage: "/tratamento-oncologico-nutricional-ortomolecular-Topaz-Gigapixel-escala-2x.jpg",
+                                title: "Suplementação Personalizada",
+                                desc: "Fórmulas exclusivas com vitaminas e minerais na dose exata para sua necessidade celular.",
                             },
                             {
                                 title: "Opção de Consulta Online",
                                 desc: "Escolha entre o atendimento em consultório ou a praticidade da consulta remota com o mesmo rigor técnico.",
-                                bgImage: "/julimar-naturopata-em-brasilia.webp",
                             },
                             {
                                 title: "Alta Performance",
-                                desc: "Monitoramento contínuo para manter sua vitalidade e clareza mental no topo.",
-                                bgImage: "/longevidade-com-nutrição-ortomolecular-emagrecimento-e-performance.jpg",
+                                desc: "Monitoramento contínuo para manter sua vitalidade e clareza mental no topo da sua capacidade.",
                             }
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-                                whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                                className="flex flex-col items-start group"
+                                className="flex flex-col items-start pt-8 border-t border-natu-brown/10"
                             >
-                                {/* Image Container */}
-                                <div className="relative w-full aspect-square rounded-[1rem] overflow-hidden mb-6 shadow-sm">
-                                    {item.bgImage && (
-                                        <div
-                                            className="absolute inset-0 z-0 group-hover:scale-110 transition-transform duration-[1500ms] ease-out bg-cover bg-center"
-                                            style={{ backgroundImage: `url(${item.bgImage})` }}
-                                        />
-                                    )}
-                                </div>
-
-                                {/* Text Content */}
-                                <div className="text-left px-1">
-                                    <h3 className="font-sans text-natu-brown text-lg mb-2 tracking-tight">
+                                <div className="text-left">
+                                    <h3 className="font-sans text-natu-brown text-lg md:text-xl mb-4 tracking-tight font-bold">
                                         {item.title}
                                     </h3>
-                                    <p className="font-sans text-[13px] md:text-sm text-[#2D3134]/60 leading-relaxed font-normal">
+                                    <p className="font-sans text-sm md:text-base text-[#2D3134]/60 leading-relaxed font-light">
                                         {item.desc}
                                     </p>
                                 </div>
