@@ -576,8 +576,8 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                                 bgImage: "/tratamento-oncologico-nutricional-ortomolecular-Topaz-Gigapixel-escala-2x.jpg",
                             },
                             {
-                                title: "Consultas Online",
-                                desc: "Atendimento remoto completo com a mesma profundidade e cuidado da consulta presencial.",
+                                title: "Opção de Consulta Online",
+                                desc: "Escolha entre o atendimento em consultório ou a praticidade da consulta remota com o mesmo rigor técnico.",
                                 bgImage: "/julimar-naturopata-em-brasilia.webp",
                             },
                             {
