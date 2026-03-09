@@ -504,3 +504,81 @@
         padding-inline: 1rem;
     }
 }
+
+/* FAQ Accordion Premium Styles */
+.blog-system-wrapper details {
+    margin: 1rem 0;
+    border: 1px solid rgba(76, 38, 26, 0.1);
+    border-radius: 1.5rem;
+    background: #fff;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.blog-system-wrapper details[open] {
+    box-shadow: 0 15px 35px -10px rgba(76, 38, 26, 0.08);
+    border-color: rgba(76, 38, 26, 0.2);
+    background: #fff;
+}
+
+.blog-system-wrapper summary {
+    padding: 1.5rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: var(--accent-dark);
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    outline: none;
+}
+
+.blog-system-wrapper summary::-webkit-details-marker {
+    display: none;
+}
+
+.blog-system-wrapper summary::after {
+    content: '+';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 194, 194, 0.2);
+    /* Natu Pink light */
+    color: #4C261A;
+    border-radius: 50%;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    transition: all 0.4s ease;
+}
+
+.blog-system-wrapper details[open] summary::after {
+    transform: rotate(45deg);
+    background: #4C261A;
+    color: #fff;
+}
+
+.blog-system-wrapper .faq-content {
+    padding: 0 1.5rem 1.5rem;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.7;
+    border-top: 1px solid rgba(76, 38, 26, 0.03);
+    margin-top: 0;
+    animation: fadeInDown 0.4s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

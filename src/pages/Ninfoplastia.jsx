@@ -218,6 +218,30 @@ const Ninfoplastia = ({ goBack }) => {
                         <p className="text-center italic mt-12 mb-8 text-natu-brown/60">
                             "Não é só sobre aparência. É sobre se sentir confortável e livre no próprio corpo novamente."
                         </p>
+
+                        <div className="mt-20 pt-12 border-t border-natu-brown/5">
+                            <h2 className="blog-title text-3xl mb-8">Dúvidas Frequentes</h2>
+                            <div className="space-y-4">
+                                <details className="blog-faq">
+                                    <summary>O procedimento dói?</summary>
+                                    <div className="faq-content">
+                                        Como utilizamos anestesia local e protocolos de conforto, a sensibilidade é mínima durante a sessão. No pós, pode haver um leve inchaço tratável.
+                                    </div>
+                                </details>
+                                <details className="blog-faq">
+                                    <summary>Quanto tempo dura a sessão?</summary>
+                                    <div className="faq-content">
+                                        Em média, a sessão dura entre 40 a 60 minutos, dependendo da tecnologia utilizada e da anatomia da paciente.
+                                    </div>
+                                </details>
+                                <details className="blog-faq">
+                                    <summary>Quando posso retornar às atividades sexuais?</summary>
+                                    <div className="faq-content">
+                                        Geralmente recomendamos aguardar de 7 a 15 dias, dependendo da cicatrização individual e do método escolhido.
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
                     </article>
                 </main>
 

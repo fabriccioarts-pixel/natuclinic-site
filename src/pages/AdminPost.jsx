@@ -436,7 +436,12 @@ const AdminPost = ({ goBack }) => {
 
                                 <div>
                                     <div className="flex items-center justify-between mb-2">
-                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest">Conteúdo (Markdown)</label>
+                                        <div className="flex flex-col">
+                                            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest">Conteúdo (Markdown)</label>
+                                            <p className="text-[9px] text-natu-brown/40 mt-1 uppercase font-bold tracking-wider">
+                                                💡 FAQ Premium: Use <code className="bg-gray-100 px-1">&lt;details&gt;&lt;summary&gt;Pergunta?&lt;/summary&gt;Resposta&lt;/details&gt;</code>
+                                            </p>
+                                        </div>
                                         <span className="text-[9px] bg-natu-pink/10 text-natu-pink px-2 py-0.5 rounded font-bold">EDITOR ATIVO</span>
                                     </div>
                                     <textarea

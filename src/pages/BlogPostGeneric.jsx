@@ -2,9 +2,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import '../styles/blog-system.css';
 import Unicon from '../components/Unicon';
 import { gsap } from 'gsap';
+import { Helmet } from 'react-helmet-async';
 
 const NatuButton = ({ children, href, className }) => (
     <a href={href} target="_blank" rel="noopener noreferrer" className={`natu-button ${className || ''}`} style={{ padding: '1rem 2rem', fontSize: '12px', letterSpacing: '0.2em' }}>
@@ -72,17 +74,60 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig = null, setCurr
         }
         const structuredData = {
             "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": post.title,
-            "image": [post.image],
-            "datePublished": post.created_at || new Date().toISOString(),
-            "dateModified": post.updated_at || new Date().toISOString(),
-            "author": {
-                "@type": "Person",
-                "name": post.author_name || "Natuclinic"
-            },
-            "description": post.meta_description || post.excerpt
+            "@graph": [
+                {
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "image": [post.image],
+                    "datePublished": post.created_at || new Date().toISOString(),
+                    "dateModified": post.updated_at || new Date().toISOString(),
+                    "author": {
+                        "@type": "Person",
+                        "name": post.author_name || "Natuclinic"
+                    },
+                    "description": post.meta_description || post.excerpt
+                }
+            ]
         };
+
+        // Extract FAQs for SEO if present in markdown content
+        const contentStr = String(post.content || '');
+        const faqsFound = [];
+
+        // 1. Match ### FAQ: Pattern
+        const faqHeaderRegex = /### FAQ: (.*)\n([\s\S]*?)(?=\n### FAQ:|\n---|\n##|$)/g;
+        let match;
+        while ((match = faqHeaderRegex.exec(contentStr)) !== null) {
+            faqsFound.push({
+                "@type": "Question",
+                "name": match[1].trim(),
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": match[2].trim().replace(/[#*`]/g, '')
+                }
+            });
+        }
+
+        // 2. Match <details><summary> Pattern
+        const detailsRegex = /<details(?:.*?)>\s*<summary>(.*?)<\/summary>\s*([\s\S]*?)\s*<\/details>/g;
+        while ((match = detailsRegex.exec(contentStr)) !== null) {
+            faqsFound.push({
+                "@type": "Question",
+                "name": match[1].trim(),
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": match[2].trim().replace(/<[^>]*>?/gm, '') // Strip HTML tags for JSON-LD text
+                }
+            });
+        }
+
+        if (faqsFound.length > 0) {
+            structuredData["@graph"].push({
+                "@type": "FAQPage",
+                "mainEntity": faqsFound
+            });
+        }
+
         jsonLdScript.text = JSON.stringify(structuredData);
 
     }, [post]);
@@ -321,7 +366,16 @@ const BlogPostGeneric = ({ goBack, post, articles = [], adConfig = null, setCurr
                             <div className="prose max-w-none prose-img:rounded-2xl prose-img:my-6">
                                 <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
+                                    rehypePlugins={[rehypeRaw]}
                                     components={{
+                                        details: ({ children, ...props }) => (
+                                            <details {...props} className="blog-faq">
+                                                {children}
+                                            </details>
+                                        ),
+                                        summary: ({ children, ...props }) => (
+                                            <summary {...props}>{children}</summary>
+                                        ),
                                         table: ({ children }) => (
                                             <div className="table-responsive-wrapper">
                                                 <table className="min-w-full border-collapse">
