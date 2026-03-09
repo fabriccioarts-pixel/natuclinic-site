@@ -929,6 +929,47 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                         />
                     </div>
                 </section>
+
+                {/* 7. Localização - Estilo Premium para Dr. Julimar */}
+                <section className="py-16 md:py-24 bg-white border-t border-gray-100">
+                    <div className="max-w-7xl mx-auto px-6 text-center mb-12">
+                        <BlurFade>
+                            <span className="text-[10px] md:text-sm font-sans font-bold tracking-[0.4em] uppercase text-gray-400 block mb-4">
+                                LOCALIZAÇÃO
+                            </span>
+                            <h2 className="text-4xl md:text-6xl font-sans font-black text-[#00A859] mb-8 uppercase tracking-tighter" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+                                Onde me encontrar?
+                            </h2>
+                            <div className="space-y-3">
+                                <p className="text-xl md:text-2xl font-sans font-bold text-gray-700 tracking-tight">
+                                    Dr. Julimar Meneses - Nutricionista Ortomolecular
+                                </p>
+                                <p className="text-lg md:text-xl font-sans font-medium text-gray-500">
+                                    Taguatinga Norte (Setor E Norte), Brasília - DF
+                                </p>
+                                <p className="text-base md:text-lg font-sans text-gray-500 font-light">
+                                    Telefones: <span className="font-bold text-gray-700">(61) 99255-1867</span>
+                                </p>
+                            </div>
+                        </BlurFade>
+                    </div>
+
+                    {/* Google Map Embed - Full Width Style */}
+                    <div className="w-full h-[400px] md:h-[550px] relative overflow-hidden group border-y border-gray-100">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://maps.google.com/maps?q=Natuclinic%20Taguatinga%20Norte&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            frameBorder="0"
+                            scrolling="no"
+                            marginHeight="0"
+                            marginWidth="0"
+                            className="grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 contrast-[1.05]"
+                            title="Localização Dr. Julimar"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </section>
             </div>
 
         </ServiceLayout >
