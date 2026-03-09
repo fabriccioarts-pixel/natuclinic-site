@@ -544,10 +544,10 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] text-[#2D3134]/40 uppercase block mb-6 font-sans">
-                                Nossa Metodologia
+                                Nossa Abordagem
                             </span>
-                            <h2 className="text-4xl md:text-6xl font-serif text-natu-brown uppercase tracking-tighter leading-[0.9]">
-                                Pilares do seu <br /> atendimento
+                            <h2 className="text-4xl md:text-6xl font-serif text-natu-brown tracking-tighter leading-[0.9]">
+                                Os alicerces da sua <br /> saúde celular
                             </h2>
                         </motion.div>
                     </div>
