@@ -1,0 +1,91 @@
+{
+  "projects": [
+    {
+      "name": "natuclinic-site",
+      "id": "prj_cBqi949okdukHX34r5MAnvD5fHcx",
+      "latestProductionUrl": "https://natuclinic-site-marketingnatuclinic-3694s-projects.vercel.app",
+      "updatedAt": 1775844055537,
+      "nodeVersion": "24.x",
+      "deprecated": false
+    },
+    {
+      "name": "natuclinic-site-main",
+      "id": "prj_kKpyUABwDwDNrT6s0SGDxjTpdxLJ",
+      "latestProductionUrl": "https://natuclinic-site-main.vercel.app",
+      "updatedAt": 1775843663377,
+      "nodeVersion": "24.x",
+      "deprecated": false
+    },
+    {
+      "name": "site-curso-dr-julimar",
+      "id": "prj_8ASbFLypyNbm7UfEuQxKSqtjjafR",
+      "latestProductionUrl": "https://site-curso-dr-julimar.vercel.app",
+      "updatedAt": 1773427781246,
+      "nodeVersion": "24.x",
+      "deprecated": false
+    },
+    {
+      "name": "institute-reborn",
+      "id": "prj_73VFG82z4j7pvQ7T5ZGgT4oePR5Z",
+      "latestProductionUrl": "https://institute-reborn.vercel.app",
+      "updatedAt": 1770610040852,
+      "nodeVersion": "24.x",
+      "deprecated": false
+    },
+    {
+      "name": "area-de-membros-aloe-imers-o",
+      "id": "prj_5KrE1aDS2IRTWdupgrXqEUZ9UiRh",
+      "latestProductionUrl": "https://area-de-membros-aloe-imers-o.vercel.app",
+      "updatedAt": 1770251214756,
+      "nodeVersion": "24.x",
+      "deprecated": false
+    },
+    {
+      "name": "v0-saa-s-landing-page-5e",
+      "id": "prj_EkdEwslsjEXCuojcTcodaCPK2SEg",
+      "latestProductionUrl": "https://v0-saa-s-landing-page-5e.vercel.app",
+      "updatedAt": 1767893730147,
+      "nodeVersion": "24.x",
+      "deprecated": false
+    },
+    {
+      "name": "v0-landingpagestructure",
+      "id": "prj_jZjuDgfdgedldAbVNLPnpCjx3E84",
+      "latestProductionUrl": "https://v0-landingpagestructure.vercel.app",
+      "updatedAt": 1767699317940,
+      "nodeVersion": "24.x",
+      "deprecated": false
+    },
+    {
+      "name": "v0-saa-s-landing-page",
+      "id": "prj_8eeuthD7yjYvR8sdq49ajh99awzK",
+      "latestProductionUrl": "https://v0-saa-s-landing-page-two-psi-64.vercel.app",
+      "updatedAt": 1765691914458,
+      "nodeVersion": "22.x",
+      "deprecated": false
+    },
+    {
+      "name": "v0-ninfoplastia-landing-page",
+      "id": "prj_Idj3CAWJmxNVdzT91AA5fMqAK8tl",
+      "latestProductionUrl": "https://v0-ninfoplastia-landing-page-marketingnatuclinic-3694s-projects.vercel.app",
+      "updatedAt": 1763130249136,
+      "nodeVersion": "22.x",
+      "deprecated": false
+    },
+    {
+      "name": "v0-site",
+      "id": "prj_2QPCEjMY7hmhfkRPnv0zWgjTyOBG",
+      "latestProductionUrl": "--",
+      "updatedAt": 1762429541964,
+      "nodeVersion": "22.x",
+      "deprecated": false
+    }
+  ],
+  "pagination": {
+    "count": 10,
+    "next": null,
+    "prev": 1775844055537
+  },
+  "contextName": "marketingnatuclinic-3694s-projects",
+  "elapsed": "2s"
+}
