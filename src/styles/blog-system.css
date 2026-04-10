@@ -1,0 +1,614 @@
+/* Blog System Scoped Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+.blog-system-wrapper {
+    /* Variables from the provided CSS */
+    --accent-light: #4C261A;
+    --accent-dark: #3a1d13;
+    --font-size-min: 16;
+    --font-size-max: 20;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    letter-spacing: -0.01em;
+    background-color: #fff;
+    width: 100%;
+    min-height: auto;
+    padding-bottom: 0;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(76, 38, 26, 0.03) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(193, 155, 140, 0.03) 0px, transparent 50%);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Scoped Utility Classes */
+.blog-system-wrapper .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Fluid Typography Mixin/Logic Adaptation */
+.blog-system-wrapper .fluid {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    /* Simplified fluid for now to avoid complex calc issues in CSS modules/scoped */
+    line-height: 1.1;
+    text-wrap: balance;
+    margin-bottom: 0.5rem;
+}
+
+/* Centered Layout */
+.blog-system-wrapper .container {
+    display: grid;
+    /* 3 Columns: Sidebar Left | Content (centered) | TOC Right */
+    grid-template-columns: 280px min(75ch, 100%) 280px;
+    max-width: 1600px;
+    padding-inline: 2rem;
+    gap: 4rem;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+@media (max-width: 1280px) {
+    .blog-system-wrapper .container {
+        grid-template-columns: 100%;
+        gap: 2rem;
+        padding-inline: 1.25rem;
+        overflow-x: hidden;
+    }
+}
+
+.blog-system-wrapper .container header {
+    grid-column: 2;
+    /* grid-row: 1; -> Natural Flow */
+}
+
+.blog-system-wrapper .container main {
+    grid-column: 2;
+    /* grid-row: 2; -> Natural Flow */
+}
+
+.blog-system-wrapper .container>hr {
+    grid-column: 2;
+    /* grid-row: 3; -> Natural Flow */
+    margin-block: 2rem;
+}
+
+.blog-system-wrapper .container footer {
+    grid-column: 2;
+    /* grid-row: 4; -> Natural Flow */
+}
+
+.blog-system-wrapper .container .related-posts {
+    grid-column: 1;
+    grid-row: 2;
+    position: sticky;
+    align-self: start;
+    top: 8rem;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.blog-system-wrapper .related-posts h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-light);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.blog-system-wrapper .related-posts .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Hide related posts on mobile, or move to bottom? 
+   For now, strictly following "Left Side" request implies desktop. 
+   On mobile they will disappear with this grid-column 1 if not handled.
+*/
+.blog-system-wrapper .related-articles-sidebar {
+    grid-column: 1;
+    grid-row: 1 / span 10;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.blog-system-wrapper .blog-sidebar-right {
+    grid-column: 3;
+    grid-row: 1 / span 10;
+    position: relative;
+    min-width: 220px;
+}
+
+.blog-system-wrapper .table-of-contents {
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.blog-system-wrapper .table-of-contents nav {
+    position: relative;
+}
+
+.blog-system-wrapper .table-of-contents h2 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+}
+
+.blog-system-wrapper .table-of-contents ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid #e5e5e5;
+}
+
+.blog-system-wrapper .table-of-contents li {
+    position: relative;
+}
+
+.blog-system-wrapper .table-of-contents a {
+    display: block;
+    padding: 0.5rem 0 0.5rem 1rem;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+}
+
+.blog-system-wrapper .table-of-contents a:hover {
+    color: #000;
+}
+
+.blog-system-wrapper .table-of-contents a.active {
+    color: var(--accent-dark);
+    border-left-color: var(--accent-dark);
+    font-weight: 500;
+}
+
+.blog-system-wrapper .back-to-top {
+    margin-top: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.blog-system-wrapper .back-to-top.visible {
+    opacity: 1;
+}
+
+.blog-system-wrapper .back-to-top a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #666;
+}
+
+/* Header & Author */
+.blog-system-wrapper header {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+.blog-system-wrapper .author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.blog-system-wrapper .author-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Main Content */
+.blog-system-wrapper article h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.blog-system-wrapper article h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    letter-spacing: -0.01em;
+}
+
+.blog-system-wrapper article p {
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+
+
+.blog-system-wrapper article blockquote {
+    border-left: 3px solid var(--accent-light);
+    padding-left: 1.5rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--accent-light);
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.blog-system-wrapper article img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+}
+
+/* Lists */
+.blog-system-wrapper article ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-system-wrapper article ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-system-wrapper article li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.blog-system-wrapper article li::marker {
+    color: var(--accent-light);
+    font-weight: bold;
+}
+
+.blog-system-wrapper article a img {
+    display: block;
+    margin: 0 auto;
+}
+
+.blog-system-wrapper article a {
+    text-decoration: none;
+}
+
+/* Horizontal Divider (---) */
+.blog-system-wrapper article hr {
+    border: 0;
+    border-top: 1px solid rgba(76, 38, 26, 0.1);
+    margin: 5rem auto;
+    width: 60%;
+}
+
+/* Tables */
+.blog-system-wrapper article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    text-align: left;
+    font-size: 0.8rem;
+    border-bottom: none;
+    /* Removed bottom border from table tag to avoid extra line */
+}
+
+.blog-system-wrapper article th {
+    background-color: #4C261A;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 1.25rem 1rem;
+    border: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-align: left;
+}
+
+.blog-system-wrapper article td {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgba(76, 38, 26, 0.08);
+    color: #444;
+    vertical-align: middle;
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.blog-system-wrapper article tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Responsive wrapper for tables handled in JS/Component */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 2rem 0;
+}
+
+.blog-system-wrapper article tr:hover {
+    background-color: rgba(76, 38, 26, 0.02);
+}
+
+@media (max-width: 768px) {
+    .blog-system-wrapper article table {
+        font-size: 0.7rem;
+    }
+
+    .blog-system-wrapper article th {
+        padding: 1rem 0.75rem;
+        font-size: 0.55rem;
+    }
+
+    .blog-system-wrapper article td {
+        padding: 0.85rem 0.75rem;
+        font-size: 0.7rem;
+        min-width: 120px;
+        /* Garante que as colunas não fiquem espremidas demais */
+    }
+}
+
+/* Footer & Form */
+.blog-system-wrapper footer {
+    margin-top: 2rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.blog-system-wrapper .waitlist-form {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.blog-system-wrapper form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.blog-system-wrapper input[type="text"],
+.blog-system-wrapper input[type="email"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    min-width: 200px;
+}
+
+.blog-system-wrapper button[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.blog-system-wrapper button[type="submit"]:hover {
+    background: #333;
+}
+
+.blog-system-wrapper .newsletter-opt {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Responsive refinements */
+@media (max-width: 1280px) {
+    .blog-system-wrapper .related-articles-sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .blog-system-wrapper .table-of-contents {
+        display: none;
+    }
+
+    .blog-system-wrapper .container header,
+    .blog-system-wrapper .container main,
+    .blog-system-wrapper .container>hr,
+    .blog-system-wrapper .container footer {
+        grid-column: 1;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .blog-system-wrapper .fluid {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-system-wrapper .fluid {
+        font-size: 1.85rem;
+        letter-spacing: -0.02em;
+    }
+
+    .blog-system-wrapper article p {
+        font-size: 1.1rem;
+        line-height: 1.75;
+        margin-bottom: 1.25rem;
+    }
+
+    .blog-system-wrapper article blockquote {
+        font-size: 1.15rem;
+        padding-left: 1.25rem;
+        margin: 2rem 0;
+        border-left-width: 3px;
+    }
+
+    .blog-system-wrapper article img {
+        margin-block: 1rem;
+        border-radius: 0.75rem;
+    }
+
+    .blog-system-wrapper article h2 {
+        font-size: 1.6rem;
+        margin-top: 2.5rem;
+    }
+
+    .blog-system-wrapper article h3 {
+        font-size: 1.4rem;
+        margin-top: 2rem;
+    }
+
+    /* Compact Tables for Mobile */
+    .blog-system-wrapper article table {
+        font-size: 0.85rem;
+        margin: 1.5rem 0;
+    }
+
+    .blog-system-wrapper article th,
+    .blog-system-wrapper article td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .blog-system-wrapper .container {
+        padding-inline: 1rem;
+    }
+}
+
+/* FAQ Accordion Premium Styles */
+.blog-system-wrapper details {
+    margin: 1.5rem 0;
+    border: 1px solid rgba(76, 38, 26, 0.1);
+    border-radius: 1.5rem;
+    background: #fff;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.blog-system-wrapper details:hover {
+    border-color: rgba(184, 153, 137, 0.3);
+    box-shadow: 0 10px 30px -10px rgba(76, 38, 26, 0.05);
+}
+
+.blog-system-wrapper details[open] {
+    box-shadow: 0 15px 35px -10px rgba(76, 38, 26, 0.08);
+    border-color: rgba(76, 38, 26, 0.2);
+    background: #fff;
+}
+
+.blog-system-wrapper summary {
+    padding: 1.5rem 1.75rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    outline: none;
+    cursor: pointer;
+}
+
+.blog-system-wrapper summary::-webkit-details-marker {
+    display: none;
+}
+
+.blog-system-wrapper summary::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 194, 194, 0.2);
+    background-image: 
+        linear-gradient(currentColor, currentColor),
+        linear-gradient(currentColor, currentColor);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2px 14px, 14px 2px;
+    color: #4C261A;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+}
+
+.blog-system-wrapper details[open] summary::after {
+    transform: rotate(45deg);
+    background-color: #4C261A;
+    color: #fff;
+}
+
+.blog-system-wrapper .faq-content,
+.blog-system-wrapper details > p,
+.blog-system-wrapper details > ul,
+.blog-system-wrapper details > ol {
+    padding: 1.5rem 1.75rem 2rem;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.7;
+    border-top: 1px solid rgba(76, 38, 26, 0.03);
+    margin: 0;
+    animation: fadeInDown 0.4s ease;
+}
+
+/* Ensure subsequent elements don't get extra border-top but keep horizontal padding */
+.blog-system-wrapper details > p ~ p,
+.blog-system-wrapper details > p ~ ul,
+.blog-system-wrapper details > p ~ ol,
+.blog-system-wrapper details > div ~ p,
+.blog-system-wrapper details > div ~ div {
+    border-top: none;
+    padding-top: 0;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

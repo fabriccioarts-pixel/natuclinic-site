@@ -1,0 +1,96 @@
+import React, { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+const CeoSection = () => {
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(".ceo-block", {
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 80%",
+                },
+                y: 40,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.3,
+                ease: "power3.out"
+            });
+        }, containerRef);
+        return () => ctx.revert();
+    }, []);
+
+    return (
+        <section id="especialistas" ref={containerRef} className="py-12 md:py-20 bg-[#F9F7F5] relative overflow-hidden">
+            {/* Subtle Texture */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed"></div>
+
+            <div className="desktop-container relative z-10">
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <span className="text-[10px] md:text-xs font-sans font-bold tracking-[0.3em] uppercase text-natu-brown/40">
+                        Conheça nossos especialistas
+                    </span>
+                </div>
+
+                {/* Grid */}
+                <div className="grid md:grid-cols-2 gap-16 md:gap-32 items-start">
+
+                    {/* Dr. Julimar */}
+                    <div className="ceo-block flex flex-col gap-8">
+                        <div className="aspect-[3/4] overflow-hidden rounded-2xl bg-gray-200 w-full relative group">
+                            <img
+                                src="/nutricionista-ortomolecular-integrativo-dr-julimar-meneses.jpeg"
+                                alt="Dr. Julimar Meneses"
+                                loading="lazy"
+                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                decoding="async"
+                            />
+                        </div>
+                        <div>
+                            <h3 className="font-sans font-bold uppercase text-3xl md:text-4xl text-natu-brown mb-3">Dr. Julimar Meneses</h3>
+                            <div className="space-y-1 mb-6">
+                                <p className="font-sans text-xs uppercase tracking-widest text-natu-brown/60">Nutricionista Ortomolecular • Farmacêutico</p>
+                                <p className="font-sans text-xs uppercase tracking-widest text-natu-brown/60">Doutor em Naturopatia • Biologia Molecular</p>
+                                <p className="font-sans text-xs uppercase tracking-widest text-natu-brown/60">Oncologista · Fitoterapia · Modulação Intestinal · CRN-DF 21414</p>
+                            </div>
+                            <p className="font-sans font-light text-gray-500 leading-relaxed text-pretty max-w-sm">
+                                Com uma visão integrativa que une bioquímica e naturopatia, Dr. Julimar lidera protocolos focados na raiz celular das disfunções nutricionais e de saúde, tratando de dentro para fora.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Dra. Débora */}
+                    <div className="ceo-block flex flex-col gap-8">
+                        <div className="aspect-[3/4] overflow-hidden rounded-2xl bg-gray-200 w-full relative group">
+                            <img
+                                src="/dra-debora.jpg"
+                                alt="Dra. Débora Meneses"
+                                loading="lazy"
+                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                decoding="async"
+                            />
+                        </div>
+                        <div>
+                            <h3 className="font-sans font-bold uppercase text-3xl md:text-4xl text-natu-brown mb-3">Dra. Débora Meneses</h3>
+                            <div className="space-y-1 mb-6">
+                                <p className="font-sans text-xs uppercase tracking-widest text-natu-brown/60">Biomédica Esteta • Especialista em Harmonização Facial</p>
+                            </div>
+                            <p className="font-sans font-light text-gray-500 leading-relaxed text-pretty max-w-sm">
+                                Responsável pela excelência técnica dos procedimentos estéticos, Dra. Débora une senso artístico apurado e rigor científico para realçar a beleza natural sem descaracterizar a identidade do paciente.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default CeoSection;

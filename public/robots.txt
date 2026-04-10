@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /adminblogpost
+Sitemap: https://natuclinic.com.br/sitemap.xml
