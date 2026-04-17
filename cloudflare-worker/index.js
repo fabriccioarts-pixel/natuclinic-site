@@ -188,11 +188,16 @@ export default {
                     });
                 }
 
+                // 1. Save to Database (D1)
                 await env.DB.prepare(
                     "INSERT INTO leads (name, email, phone, source) VALUES (?, ?, ?, ?)"
                 )
                     .bind(name, email, phone, source || 'website')
                     .run();
+
+                // 2. Send Email Notification via Resend
+                const lead = { name, email, phone, source: source || 'Home Site' };
+                await sendEmailWithResend(lead, env);
 
                 return new Response(JSON.stringify({ success: true }), {
                     headers: { ...corsHeaders, "Content-Type": "application/json" }
@@ -208,3 +213,45 @@ export default {
         return new Response("Not Found", { status: 404, headers: corsHeaders });
     },
 };
+
+// Helper function to send email via Resend
+async function sendEmailWithResend(lead, env) {
+    const apiKey = env.RESEND_API_KEY || "re_NMJvqVN9_Nm3rzeiQHwahanDdQTtLEoMv";
+
+    try {
+        const response = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                from: 'Natuclinic Leads <onboarding@resend.dev>',
+                to: ['marketingnatuclinic@gmail.com'],
+                subject: `🚀 Novo Lead: ${lead.name}`,
+                html: `
+                    <div style="font-family: sans-serif; padding: 20px; color: #4C261A; border: 1px solid #F2F0E9; border-radius: 12px; max-width: 600px;">
+                        <h2 style="margin-top: 0; color: #4C261A; border-bottom: 2px solid #F2F0E9; padding-bottom: 10px;">Novo Lead Recebido! 🚀</h2>
+                        <div style="padding: 15px 0;">
+                            <p style="margin: 10px 0;"><strong>Nome:</strong> <span style="color: #333;">${lead.name}</span></p>
+                            <p style="margin: 10px 0;"><strong>E-mail:</strong> <span style="color: #333;">${lead.email}</span></p>
+                            <p style="margin: 10px 0;"><strong>WhatsApp:</strong> <span style="color: #333;">${lead.phone}</span></p>
+                            <p style="margin: 10px 0;"><strong>Origem:</strong> <span style="color: #333;">${lead.source}</span></p>
+                        </div>
+                        <div style="background-color: #F2F0E9; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                            <p style="margin: 0; font-size: 14px;"><strong>Dica:</strong> Entre em contato com o lead em menos de 15 minutos para aumentar as chances de conversão.</p>
+                        </div>
+                        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0 15px 0;">
+                        <p style="font-size: 10px; color: #999; text-align: center;">Notificação Automática Sistema Natuclinic</p>
+                    </div>
+                `
+            })
+        });
+
+        const data = await response.json();
+        console.log("Resend Response:", data);
+        return data;
+    } catch (e) {
+        console.error("Resend fetch error:", e);
+    }
+}
