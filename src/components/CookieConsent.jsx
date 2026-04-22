@@ -36,7 +36,10 @@ const CookieConsent = () => {
 
         // Initialize Meta Pixel if marketing is allowed
         if (consents.marketing && window.fbq) {
-            window.fbq('init', '899389778630417');
+            if (!window._fbq_natu_init) {
+                window.fbq('init', '899389778630417');
+                window._fbq_natu_init = true;
+            }
             window.fbq('track', 'PageView');
         }
     };

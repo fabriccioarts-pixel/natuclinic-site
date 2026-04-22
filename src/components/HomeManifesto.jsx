@@ -72,9 +72,9 @@ const HomeManifesto = () => {
                 {/* METODOLOGIA */}
                 <div className="mt-20 space-y-16 lg:col-span-5 lg:mt-0 lg:ml-auto">
                     {[
-                        { id: "01", title: "Consulta Avaliativa Criteriosa", text: "Cada protocolo nasce de uma análise detalhada. Não padronizamos você." },
-                        { id: "02", title: "Integração Terapêutica", text: "Unimos nutrição ortomolecular, estética avançada e suplementação funcional." },
-                        { id: "03", title: "Saúde Celular", text: "Equilíbrio biológico como base. Beleza é consequência de saúde." }
+                        { id: "01", title: "Um olhar atento sobre você", text: "Cada protocolo nasce de uma escuta cuidadosa. Não padronizamos você; respeitamos sua história." },
+                        { id: "02", title: "O cuidado que te abraça por inteiro", text: "Unimos nutrição, estética e bem-estar para que você se sinta completa." },
+                        { id: "03", title: "Equilíbrio que vem de dentro", text: "Beleza é o brilho de um corpo em harmonia. Cuidamos da sua saúde para que você brilhe." }
                     ].map((item, idx) => (
                         <div key={idx} className="method-item relative pl-6 border-l border-[#F2F0E9]/20 lg:pl-0 lg:border-l-0">
                             <span className="block mb-4 font-serif text-2xl text-[#F2F0E9]/30">{item.id}</span>

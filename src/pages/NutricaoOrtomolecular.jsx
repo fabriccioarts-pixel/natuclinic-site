@@ -268,13 +268,13 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                             </BlurFade>
                             <BlurFade delay={0.4}>
                                 <h1 className="text-4xl md:text-7xl font-serif text-white leading-[0.85] tracking-tighter text-center md:text-left max-w-4xl mx-auto md:mx-0">
-                                    A saúde regenerada <br />
-                                    no nível molecular
+                                    A saúde que você <br />
+                                    sente em cada célula
                                 </h1>
                             </BlurFade>
                             <BlurFade delay={0.6}>
                                 <p className="mt-4 text-sm md:text-base font-normal text-white/90 max-w-lg leading-relaxed text-center md:text-left mx-auto md:mx-0 font-sans">
-                                    A Nutrição Ortomolecular identifica e corrige desequilíbrios bioquímicos para restaurar sua vitalidade de dentro para fora.
+                                    Encontre o equilíbrio real e sinta novamente a energia que parecia perdida. Um cuidado profundo para quem busca vitalidade e bem-estar duradouro.
                                 </p>
                             </BlurFade>
                             <BlurFade delay={0.8}>
@@ -376,18 +376,18 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                             </BlurFade>
                             <BlurFade delay={0.4}>
                                 <h2 className="text-4xl md:text-5xl font-serif text-natu-brown leading-[1] tracking-tighter mb-8">
-                                    A Nutrição Ortomolecular <br /> Além da Dieta Convencional
+                                    Mais do que ditar regras, <br /> queremos encontrar sua harmonia
                                 </h2>
                             </BlurFade>
                             <div className="space-y-6">
                                 <BlurFade delay={0.5}>
                                     <p className="font-sans text-lg text-natu-brown leading-relaxed font-light">
-                                        Criada pelo Dr. Linus Pauling, a nutrição ortomolecular trata a <strong className="font-bold text-natu-brown">causa raiz do mal-estar</strong>, e não apenas os sintomas. Ao contrário da nutrição convencional, que foca apenas em macros, nós olhamos para as moléculas.
+                                        Aqui na Natuclinic, nossa nutrição ortomolecular trata o <strong className="font-bold text-natu-brown">porquê do seu cansaço</strong>, e não apenas o que você come. Olhamos para você como um todo, entendendo o que suas células precisam para funcionar em harmonia.
                                     </p>
                                 </BlurFade>
                                 <BlurFade delay={0.6}>
                                     <p className="font-sans text-lg text-natu-brown leading-relaxed font-light">
-                                        Identificamos carências de vitaminas, minerais e aminoácidos, além de combater o estresse oxidativo causado pelos radicais livres. É a ciência de fornecer ao seu corpo os <strong className="font-bold text-natu-brown">elementos exatos</strong> para que ele cure a si mesmo.
+                                        Identificamos o que falta no seu equilíbrio para silenciar incômodos e recuperar sua disposição. É a ciência de oferecer ao seu corpo os <strong className="font-bold text-natu-brown">cuidados exatos</strong> para que ele recupere sua força natural.
                                     </p>
                                 </BlurFade>
                                 <BlurFade delay={0.7}>
@@ -446,10 +446,10 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                                     Por que fazer?
                                 </span>
                                 <h2 className="text-3xl md:text-5xl lg:text-5xl font-serif text-natu-brown leading-[0.95] tracking-tighter mb-6">
-                                    Transformações <br /> <span className="text-natu-brown/40">na sua rotina:</span>
+                                    O que muda <br /> <span className="text-natu-brown/40">na sua vida:</span>
                                 </h2>
                                 <p className="font-sans text-base lg:text-lg text-gray-500 leading-relaxed font-light mb-8 max-w-sm">
-                                    Mais do que tratar sintomas, devolvemos a liberdade de viver em sua melhor versão todos os dias.
+                                    Queremos que você acorde com disposição, viva sem dores e recupere a alegria de se sentir bem no seu próprio corpo todos os dias.
                                 </p>
 
                                 <NatuButton onClick={handleWhatsApp}>
@@ -605,33 +605,33 @@ const NutricaoOrtomolecular = ({ goBack }) => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                             {[
                                 {
-                                    title: "Check-up Celular de Alta Precisão",
-                                    desc: "Uma investigação profunda de mais de 60 biomarcadores para descobrir exatamente o que falta para seu corpo funcionar no potencial máximo.",
+                                    title: "Um mergulho profundo na sua saúde",
+                                    desc: "Uma investigação detalhada para descobrir exatamente o que você precisa para se sentir em sua melhor forma hoje.",
                                     icon: "microscope"
                                 },
                                 {
-                                    title: "Protocolos de Pureza Máxima",
-                                    desc: "Utilizamos apenas nutrientes de altíssima pureza, sem aditivos químicos ou metais pesados, garantindo que seu corpo absorva 100% dos benefícios.",
+                                    title: "O melhor que a natureza oferece",
+                                    desc: "Utilizamos nutrientes selecionados e puros, garantindo que você receba o máximo cuidado, sem aditivos desnecessários.",
                                     icon: "leaf"
                                 },
                                 {
-                                    title: "Combate à Inflamação e Dores",
-                                    desc: "Um protocolo desenhado para silenciar a inflamação silenciosa, a verdadeira raiz das suas dores crônicas, inchaços e cansaço persistente.",
+                                    title: "Viver sem o peso das dores",
+                                    desc: "Silencia o mal-estar e recupera o conforto que você merece, tratando o corpo para que ele se sinta leve novamente.",
                                     icon: "zap-off"
                                 },
                                 {
-                                    title: "Ativação do seu Metabolismo",
-                                    desc: "Ajustamos sua bioquímica para que seu corpo aprenda a queimar gordura de maneira eficiente, ganhar massa magra e estabilizar seus hormônios.",
+                                    title: "Desperte seu metabolismo",
+                                    desc: "Ajustamos seu equilíbrio interno para que seu corpo aprenda a queimar gordura de forma natural e com mais energia.",
                                     icon: "zap"
                                 },
                                 {
-                                    title: "Cuidado Integrativo Avançado",
-                                    desc: "Suporte altamente especializado para quem enfrenta jornadas sensíveis como oncologia, modulação intestinal profunda e doenças autoimunes.",
+                                    title: "Cuidado acolhedor e integrativo",
+                                    desc: "Acompanhamento próximo para quem busca apoio em momentos sensíveis, como modulação intestinal e equilíbrio imunológico.",
                                     icon: "heart"
                                 },
                                 {
-                                    title: "Excelência em Brasília para o Mundo",
-                                    desc: "A mesma qualidade técnica da Natuclinic em Brasília disponível para você em qualquer lugar do globo, através de teleconsultas premium.",
+                                    title: "De Brasília para onde você estiver",
+                                    desc: "O mesmo carinho e excelência da Natuclinic disponíveis para você em qualquer lugar, através de nossas teleconsultas.",
                                     icon: "globe"
                                 }
                             ].map((item, i) => (

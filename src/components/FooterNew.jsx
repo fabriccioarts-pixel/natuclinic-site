@@ -209,12 +209,12 @@ const FooterNew = ({ isStatic = false }) => {
                             <span>Feito com</span>
                             <span className="text-red-500 animate-pulse text-base">❤️</span>
                             <a
-                                href="https://www.instagram.com/obiodomarketing?igsh=MWo2bW04c2k4Nzh1ag%3D%3D&utm_source=qr"
+                                href="https://www.instagram.com/gone.assessoria"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="transition-all hover:opacity-80"
                             >
-                                <img src="/Bio _ Marketing.svg" alt="Bio Marketing" className="h-6 w-auto object-contain opacity-30" />
+                                <img src="/gone-logo.svg" alt="Gone Assessoria" className="h-4 w-auto object-contain opacity-30" />
                             </a>
                         </div>
                     </div>

@@ -114,10 +114,10 @@ const LeadCapture = () => {
                                 Lista VIP Natuclinic
                             </span>
                             <h2 className="text-4xl md:text-5xl font-serif text-[#F2F0E9] leading-tight mb-6">
-                                Transforme sua saúde conosco
+                                Comece sua mudança hoje
                             </h2>
                             <p className="text-lg font-sans font-light text-[#F2F0E9]/70 leading-relaxed mb-8">
-                                Receba conteúdos exclusivos sobre saúde integrativa, estética avançada e garanta condições especiais para suas consultas.
+                                Faça parte da nossa comunidade e receba dicas de autocuidado, saúde e beleza feitas com carinho pela nossa equipe para você.
                             </p>
 
                         </div>
@@ -188,7 +188,7 @@ const LeadCapture = () => {
                                             <Unicon name="spinner" className="animate-spin" size={18} />
                                         ) : (
                                             <>
-                                                Quero me inscrever
+                                                Quero fazer parte
                                                 <Unicon name="send" size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                             </>
                                         )}

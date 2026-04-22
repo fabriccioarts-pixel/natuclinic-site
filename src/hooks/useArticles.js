@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { articles as fallbackArticles } from '../data/articles.jsx';
 import { API_URLS } from '../constants/links';
 
@@ -8,7 +8,12 @@ export const useArticles = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const fetchedRef = useRef(false);
+
     useEffect(() => {
+        if (fetchedRef.current) return;
+        fetchedRef.current = true;
+
         const fetchArticles = async () => {
             try {
                 setLoading(true);
@@ -25,13 +30,11 @@ export const useArticles = () => {
                     }
                 }
 
-                // Se falhar ou estiver vazio, usa o fallback local (que é sincronizado no build)
-                console.log('API Cloudflare não disponível ou vazia. Usando dados locais.');
+                // Se falhar ou estiver vazio, usa o fallback local
                 const filteredFallback = (fallbackArticles || []).filter(a => a.id !== 'sidebar-ad-global');
                 setArticles(filteredFallback);
                 setAdConfig((fallbackArticles || []).find(a => a.id === 'sidebar-ad-global'));
             } catch (err) {
-                console.warn('Erro ao buscar artigos da API:', err);
                 const filteredFallback = (fallbackArticles || []).filter(a => a.id !== 'sidebar-ad-global');
                 setArticles(filteredFallback);
                 setAdConfig((fallbackArticles || []).find(a => a.id === 'sidebar-ad-global'));

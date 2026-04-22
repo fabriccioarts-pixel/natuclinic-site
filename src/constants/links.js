@@ -38,5 +38,5 @@ export const WHATSAPP_LINKS = {
 };
 
 export const API_URLS = {
-    BASE: import.meta.env.VITE_API_URL || "https://natuclinic-api.simulado-ata-mf.workers.dev",
+    BASE: import.meta.env.VITE_API_URL || "https://natuclinic-api.fabriccioarts.workers.dev",
 };

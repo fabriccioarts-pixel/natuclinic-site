@@ -34,7 +34,7 @@ const feedbacks = [
     }
 ];
 
-const VideoFeedbacks = () => {
+const VideoFeedbacks = ({ showTitle = true, bgColor = "bg-natu-ivory", pyClass = "py-12 md:py-24" }) => {
     const [activeId, setActiveId] = useState(feedbacks[0].id);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isFullscreen, setIsFullscreen] = useState(false);
@@ -117,7 +117,7 @@ const VideoFeedbacks = () => {
 
     const handleMouseMove = (e) => {
         if (!isDown || window.innerWidth >= 1024) return;
-        e.preventDefault();
+        
         const pageX = e.pageX || e.touches?.[0].pageX;
         const x = pageX - scrollContainerRef.current.offsetLeft;
         const walk = (x - startX) * 1.5;
@@ -161,19 +161,21 @@ const VideoFeedbacks = () => {
     const activeFeedback = feedbacks.find(f => f.id === activeId);
 
     return (
-        <section className="py-12 md:py-24 bg-natu-ivory overflow-hidden">
+        <section className={`overflow-hidden ${bgColor} ${pyClass}`}>
             <div className="desktop-container">
-                <div className="mb-10 space-y-2 text-center lg:text-left">
-                    <div className="flex items-center justify-center lg:justify-start gap-2 text-natu-brown/40">
-                        <Unicon name="video" size={12} />
-                        <span className="text-[10px] md:text-xs font-sans font-bold tracking-[0.3em] uppercase block">
-                            O que nossos pacientes dizem
-                        </span>
+                {showTitle && (
+                    <div className="mb-10 space-y-2 text-center lg:text-left">
+                        <div className="flex items-center justify-center lg:justify-start gap-2 text-natu-brown/40">
+                            <Unicon name="video" size={12} />
+                            <span className="text-[10px] md:text-xs font-sans font-bold tracking-[0.3em] uppercase block">
+                                O que nossos pacientes dizem
+                            </span>
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-serif text-natu-brown">
+                            Depoimentos que <span className="italic">inspiram</span>
+                        </h2>
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-serif text-natu-brown">
-                        Depoimentos que <span className="italic">inspiram</span>
-                    </h2>
-                </div>
+                )}
 
                 {/* Mobile Slider / Desktop Accordion Wrapper */}
                 <div className="relative">
@@ -194,6 +196,7 @@ const VideoFeedbacks = () => {
                         onTouchEnd={handleMouseUp}
                         className={`flex lg:flex-row flex-nowrap lg:items-start gap-4 lg:gap-3 overflow-x-auto lg:overflow-visible no-scrollbar pb-8 lg:pb-0 min-h-[450px] px-[7.5%] lg:px-0
                             ${isDown && window.innerWidth < 1024 ? 'cursor-grabbing' : 'cursor-grab lg:cursor-default'}`}
+                        style={{ touchAction: 'pan-y' }}
                     >
                         {feedbacks.map((f) => {
                             const isActive = activeId === f.id;
@@ -274,7 +277,7 @@ const VideoFeedbacks = () => {
                                     {/* Text content BELOW the video container */}
                                     <div className={`mt-6 lg:mt-8 space-y-4 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 
                                         ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 lg:opacity-0 translate-y-4 pointer-events-none h-0 lg:h-auto overflow-hidden'}`}>
-                                        <h3 className="text-base md:text-lg font-sans font-bold text-black opacity-80 leading-snug max-w-sm">
+                                        <h3 className="text-base md:text-lg font-sans font-bold text-black opacity-80 leading-snug max-w-sm text-left">
                                             {f.result}
                                         </h3>
 
