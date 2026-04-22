@@ -5,6 +5,7 @@ import { WHATSAPP_LINKS } from '../constants/links';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import VideoFeedbacks from '../components/VideoFeedbacks';
+import SEO from '../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,6 +113,13 @@ const HarmonizacaoCorporal = () => {
 
     return (
         <div className="bg-white text-[#2D1B14] font-sans overflow-x-hidden harmonizacao-page">
+            <SEO
+                title="Harmone Bee® — Harmonização Corporal em 90 Dias"
+                description="O protocolo Harmone Bee® une nutrição ortomolecular, procedimentos estéticos e acompanhamento intensivo para transformar seu corpo em 90 dias. Natuclinic, Brasília."
+                url="https://natuclinic.com.br/procedimentos/harmonizacao-corporal"
+                keywords="harmonização corporal, harmone bee, protocolo emagrecimento, nutrição ortomolecular, estética corporal Brasília, natuclinic"
+                image="/og-harmonizacao-corporal.jpg"
+            />
 
             {/* Hero */}
             <section className="relative min-h-[calc(100vh-128px)] mt-32 flex flex-col justify-end overflow-hidden pb-12 md:pb-20">

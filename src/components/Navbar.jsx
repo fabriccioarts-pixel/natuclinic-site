@@ -94,7 +94,7 @@ const Navbar = () => {
                             { label: 'Harmonização Facial', href: WHATSAPP_LINKS.MSG_FACIAL },
                             { label: 'Ninfoplastia Sem Cortes', href: WHATSAPP_LINKS.MSG_NINFO },
                             { label: 'Bioestimuladores de Colágeno', href: WHATSAPP_LINKS.PROCEDURES },
-                            { label: 'Harmonização Corporal', href: WHATSAPP_LINKS.MSG_CORPORAL }
+                            { label: 'Harmonização Corporal', path: '/procedimentos/harmonizacao-corporal' }
                         ]
                     }
                 ]
@@ -147,7 +147,7 @@ const Navbar = () => {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden z-50 p-2 text-natu-brown bg-transparent border-none"
+                    className="md:hidden z-[60] relative p-2 text-natu-brown bg-transparent border-none"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Toggle Menu"
                 >
